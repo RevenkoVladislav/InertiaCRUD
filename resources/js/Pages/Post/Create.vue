@@ -4,22 +4,42 @@ export default {
     name: "Create",
     components: {
         Link
+    },
+
+    data() {
+        return {
+            title: '',
+            content: '',
+        }
+    },
+
+    methods: {
+        store() {
+            this.$inertia.post('/posts', {title: this.title, content: this.content});
+        }
     }
 }
 </script>
 
 <template>
     <div class="w-96 mx-auto pt-8">
-        <h1 class="text-lg mb-8">
+        <h1 class="text-lg mb-4">
             Create
         </h1>
-        <form>
+        <div class="mb-4">
+            <Link :href="route('post.index')" class="text-sm text-sky-500">
+                Back
+            </Link>
+        </div>
+        <form @submit.prevent="store">
             <div class="mb-4">
-                <input class="rounded-full w-full border-gray-300"
+                <input v-model="title"
+                    class="rounded-full w-full border-gray-300"
                     type="text" placeholder="title">
             </div>
             <div class="mb-4">
-                <textarea class="rounded-full w-full border-gray-300"
+                <textarea v-model="content"
+                    class="rounded-full w-full border-gray-300"
                     name="content" placeholder="content"></textarea>
             </div>
             <div class="mb-4">
