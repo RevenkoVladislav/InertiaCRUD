@@ -1,10 +1,13 @@
 <script>
 import { Link } from '@inertiajs/vue3';
+import MainLayout from "@/Layouts/MainLayout.vue";
 export default {
     name: "Index",
     components: {
         Link
     },
+
+    layout: MainLayout,
 
     props: [
         'posts',
@@ -13,8 +16,7 @@ export default {
 </script>
 
 <template>
-    <div class="w-96 mx-auto pt-8">
-        <h1 class="text-lg mb-8">
+        <h1 class="text-lg mb-8 text-center">
             Posts
         </h1>
         <div>
@@ -31,7 +33,6 @@ export default {
                 </div>
             </div>
         </div>
-    </div>
 </template>
 
 <style scoped>

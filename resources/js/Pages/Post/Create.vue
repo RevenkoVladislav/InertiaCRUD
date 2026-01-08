@@ -1,10 +1,13 @@
 <script>
 import { Link } from '@inertiajs/vue3';
+import MainLayout from "@/Layouts/MainLayout.vue";
 export default {
     name: "Create",
     components: {
         Link
     },
+
+    layout: MainLayout,
 
     data() {
         return {
@@ -22,7 +25,6 @@ export default {
 </script>
 
 <template>
-    <div class="w-96 mx-auto pt-8">
         <h1 class="text-lg mb-4">
             Create
         </h1>
@@ -47,7 +49,6 @@ export default {
                     type="submit">Store</button>
             </div>
         </form>
-    </div>
 </template>
 
 <style scoped>
