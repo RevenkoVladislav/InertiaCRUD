@@ -25,4 +25,9 @@ class PostController extends Controller
         Post::create($request->validated());
         return redirect()->route('post.index');
     }
+
+    public function show(Post $post)
+    {
+        return inertia('Post/Show', compact('post'));
+    }
 }
