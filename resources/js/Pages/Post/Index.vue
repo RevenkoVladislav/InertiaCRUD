@@ -31,6 +31,12 @@ export default {
                 <div class="text-sm text-right text-sky-500">
                     <Link :href="route('post.show', post.id)">Show</Link>
                 </div>
+                <div class="text-sm text-right text-green-600">
+                    <Link :href="route('post.edit', post.id)">Edit</Link>
+                </div>
+                <div class="text-sm cursor-pointer text-right text-red-700">
+                    <Link :href="route('post.delete', post.id)">Delete</Link>
+                </div>
             </div>
         </div>
 </template>
